@@ -2,12 +2,9 @@ import type { VercelRequest, VercelResponse } from '@vercel/node';
 import express from 'express';
 import path from 'path';
 import fs from 'fs';
-import { fileURLToPath } from 'url';
-import { Tour, Booking, Review, BlogPost, ContactInquiry, EmailLog } from '../src/types.js';
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const DB_FILE = path.join(__dirname, '../vienna_data.json');
-const distPath = path.join(__dirname, '../dist');
+const DB_FILE = path.join(process.cwd(), 'vienna_data.json');
+const distPath = path.join(process.cwd(), 'dist');
 
 // Function that handles requests  
 const handler = async (req: VercelRequest, res: VercelResponse) => {
