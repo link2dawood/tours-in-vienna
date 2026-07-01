@@ -1,10 +1,24 @@
-import { useState, FormEvent } from "react";
+import { useState, FormEvent, useMemo } from "react";
 import { Clock, User, Calendar, MessageSquare, ChevronLeft, Send, Sparkles } from "lucide-react";
+import { marked } from "marked";
 import { BlogPost, BlogComment } from "../types";
 
 interface BlogGridProps {
   blogs: BlogPost[];
   onNewCommentAdded: (blogId: string, newComment: BlogComment) => void;
+}
+
+function ContentRenderer({ markdown }: { markdown: string }) {
+  const html = useMemo(() => {
+    return marked(markdown);
+  }, [markdown]);
+
+  return (
+    <div 
+      dangerouslySetInnerHTML={{ __html: html as string }}
+      className="prose prose-sm max-w-none prose-headings:font-serif prose-h3:text-base prose-h3:font-bold prose-p:text-gray-700 prose-strong:font-semibold prose-li:text-gray-700 prose-ul:space-y-2 prose-ol:space-y-2"
+    />
+  );
 }
 
 export default function BlogGrid({ blogs, onNewCommentAdded }: BlogGridProps) {
@@ -101,8 +115,8 @@ export default function BlogGrid({ blogs, onNewCommentAdded }: BlogGridProps) {
           </div>
 
           {/* Content Body */}
-          <div className="prose max-w-none text-gray-700 font-light leading-relaxed text-sm sm:text-base space-y-4 font-sans pt-4 whitespace-pre-wrap">
-            {selectedPost.content}
+          <div className="text-gray-700 font-light leading-relaxed text-sm sm:text-base space-y-4 font-sans pt-4 prose prose-sm max-w-none">
+            <ContentRenderer markdown={selectedPost.content} />
           </div>
 
         </article>

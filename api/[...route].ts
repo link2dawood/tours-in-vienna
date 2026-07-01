@@ -4,6 +4,7 @@ import fs from 'fs';
 
 const DB_FILE = path.join(process.cwd(), 'vienna_data.json');
 const distPath = path.join(process.cwd(), 'dist');
+const publicPath = path.join(process.cwd(), 'public');
 
 // Load database helper
 function loadDatabase() {
@@ -101,35 +102,51 @@ const handler = async (req: VercelRequest, res: VercelResponse) => {
   }
   
   // Serve static files for React app
-  const filePath = path.join(distPath, pathname === '/' ? 'index.html' : pathname);
+  const contentTypes: Record<string, string> = {
+    '.html': 'text/html',
+    '.js': 'application/javascript',
+    '.css': 'text/css',
+    '.json': 'application/json',
+    '.png': 'image/png',
+    '.jpg': 'image/jpeg',
+    '.gif': 'image/gif',
+    '.svg': 'image/svg+xml',
+    '.woff': 'font/woff',
+    '.woff2': 'font/woff2',
+  };
   
-  try {
-    if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
+  let filePath = '';
+  let fileExists = false;
+  
+  if (pathname !== '/' && pathname !== '') {
+    const publicFilePath = path.join(publicPath, pathname);
+    if (fs.existsSync(publicFilePath) && fs.statSync(publicFilePath).isFile()) {
+      filePath = publicFilePath;
+      fileExists = true;
+    }
+  }
+  
+  if (!fileExists) {
+    const distFilePath = path.join(distPath, pathname === '/' ? 'index.html' : pathname);
+    if (fs.existsSync(distFilePath) && fs.statSync(distFilePath).isFile()) {
+      filePath = distFilePath;
+      fileExists = true;
+    }
+  }
+  
+  if (fileExists && filePath) {
+    try {
       const ext = path.extname(filePath);
-      const contentTypes: Record<string, string> = {
-        '.html': 'text/html',
-        '.js': 'application/javascript',
-        '.css': 'text/css',
-        '.json': 'application/json',
-        '.png': 'image/png',
-        '.jpg': 'image/jpeg',
-        '.gif': 'image/gif',
-        '.svg': 'image/svg+xml',
-        '.woff': 'font/woff',
-        '.woff2': 'font/woff2',
-      };
-      
       res.setHeader('Content-Type', contentTypes[ext] || 'application/octet-stream');
       if (ext !== '.html') {
         res.setHeader('Cache-Control', 'public, max-age=3600');
       }
       return res.send(fs.readFileSync(filePath));
+    } catch (e) {
+      // Continue to SPA fallback
     }
-  } catch (e) {
-    // Fallback to index.html for SPA routing
   }
   
-  // SPA fallback: serve index.html for all other routes
   res.setHeader('Content-Type', 'text/html');
   return res.send(fs.readFileSync(path.join(distPath, 'index.html')));
 };
