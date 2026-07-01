@@ -2,7 +2,6 @@ import express from "express";
 import path from "path";
 import fs from "fs";
 import { createServer as createViteServer } from "vite";
-import { GoogleGenAI } from "@google/genai";
 import dotenv from "dotenv";
 import { Tour, Booking, Review, BlogPost, ContactInquiry, EmailLog } from "./src/types";
 
@@ -12,28 +11,6 @@ const app = express();
 const PORT = 3000;
 
 app.use(express.json());
-
-// Initialize Gemini Client
-let ai: GoogleGenAI | null = null;
-const GEMINI_KEY = process.env.GEMINI_API_KEY;
-
-if (GEMINI_KEY && GEMINI_KEY !== "MY_GEMINI_API_KEY") {
-  try {
-    ai = new GoogleGenAI({
-      apiKey: GEMINI_KEY,
-      httpOptions: {
-        headers: {
-          'User-Agent': 'aistudio-build',
-        }
-      }
-    });
-    console.log("Successfully initialized server-side Gemini AI client.");
-  } catch (err) {
-    console.error("Error initializing Gemini client:", err);
-  }
-} else {
-  console.warn("GEMINI_API_KEY is not configured or holds a placeholder. AI Chatbot will fall back to smart local rule-based replies.");
-}
 
 // File Database Path
 const DB_FILE = path.join(process.cwd(), "vienna_data.json");
@@ -624,103 +601,6 @@ app.get("/api/emails", (req, res) => {
 });
 
 // 7. Chat endpoint using server-side Gemini AI API or high-quality rule fallback
-app.post("/api/chat", async (req, res) => {
-  const { message, history } = req.body;
-
-  if (!message) {
-    return res.status(400).json({ error: "Message is required." });
-  }
-
-  const systemInstruction = `
-    You are Franz, the dedicated AI Travel Concierge for "Tours in Vienna" (Tourismusbüro Wien).
-    You speak in a warm, helpful, charming, and highly professional manner to global tourists.
-    
-    Agency details:
-    - Business Name: Tours in Vienna
-    - Address: Schlettergasse 3/9/10, 1220 Wien, Austria
-    - Phone: +43 664 4126911
-    - Status: Rated 5.0 on Google Reviews (5.01 average)
-    - Office Hours: Mon-Fri 8am-6pm, Sat 9am-4pm, Sun Closed.
-    
-    Our Curated Tours & Experiences:
-    1. "Vienna Grand Imperial Walking Tour": €35 per person, duration 3 hours, start Stephansplatz cathedral entrance.
-    2. "Schönbrunn Palace & Gardens Explorer": €65 per person, includes skip-the-line group tickets, 4 hours.
-    3. "Vienna Woods & Wachau Valley Wine Escape": €110 per person, full day (8h), coach transport, Danube cruise, wine tasting flight, tavern lunch.
-    4. "Mozart & Strauss Vienna Concert Evening": €49, historical Kursalon concert, free Sekt sparkling wine, 2 hours.
-    5. "Danube River Evening Sunset Cruise": €55, double-decker boat Schwedenplatz, Viennese buffet, sunset views, live accordion music.
-    6. "Viennese Culinary Secrets Food Tour": €75, Naschmarkt market samples, Käsekrainer sausage, café cake & Melange coffee.
-
-    General Guidance:
-    - Answer tourist questions about Vienna's top landmarks (Hofburg, Schönbrunn, Sisi, Prater Ferris Wheel, Belvedere Palace with Gustav Klimt's Kiss artwork).
-    - Give suggestions on local culinary secrets: Schnitzel, Tafelspitz, Apfelstrudel, Sacher Torte, and legendary café house etiquettes (like how coffee is always served with a spoon and cold water).
-    - Keep responses elegant, polite, and concise (under 3 or 4 short paragraphs).
-    - Seamlessly prompt the customer to book their tickets directly on our website! Mention we have coupons like "VIENNA15" (15% off) or "WELCOMETOWIEN" (10% off).
-    - Do NOT ever invent or use other contact details or other pricing. Keep all information 100% correct.
-  `;
-
-  // If Gemini client is ready, let's call it!
-  if (ai) {
-    try {
-      // Re-map history from { sender: 'user' | 'assistant', text: string } to Gemini structure
-      const formattedContents = [];
-      if (history && Array.isArray(history)) {
-        for (const chatTurn of history) {
-          formattedContents.push({
-            role: chatTurn.sender === "user" ? "user" : "model",
-            parts: [{ text: chatTurn.text }]
-          });
-        }
-      }
-      formattedContents.push({
-        role: "user",
-        parts: [{ text: message }]
-      });
-
-      const response = await ai.models.generateContent({
-        model: "gemini-3.5-flash",
-        contents: formattedContents,
-        config: {
-          systemInstruction,
-          temperature: 0.7,
-        }
-      });
-
-      const reply = response.text || "I am processing your inquiry and will be delighted to guide you shortly. How can Franz assist your Vienna itinerary further?";
-      return res.json({ text: reply });
-
-    } catch (err: any) {
-      console.error("Gemini Generation Error:", err);
-      // Fallback if Gemini rate-limited or failed
-    }
-  }
-
-  // Smart Rule-based local fallback in case Gemini API is not configured or fails
-  const lowercaseMsg = message.toLowerCase();
-  let reply = "";
-
-  if (lowercaseMsg.includes("hello") || lowercaseMsg.includes("hi") || lowercaseMsg.includes("hey")) {
-    reply = "Guten Tag! Welcome to Vienna. I am Franz, your virtual imperial concierge from **Tours in Vienna**. How may I assist your travel or tour booking today?";
-  } else if (lowercaseMsg.includes("price") || lowercaseMsg.includes("cost") || lowercaseMsg.includes("how much")) {
-    reply = "We offer experiences for every budget! Our prices range from **€35** for the historic Walking Tour up to **€110** for the all-inclusive full-day Wachau Wine Country Escape. You can check individual rates, reviews, and book instantly on our Tour Directory. Enter code **VIENNA15** at checkout for a fabulous 15% discount!";
-  } else if (lowercaseMsg.includes("palace") || lowercaseMsg.includes("schönbrunn") || lowercaseMsg.includes("sisi")) {
-    reply = "Ah, the imperial grandeur! Our **Schönbrunn Palace & Gardens Explorer** is an absolute must-see. It's priced at €65 and includes guaranteed skip-the-line entrance tickets, a guided tour of the 40 imperial apartments, and a walk up the Gloriette gardens with Franz. The tour lasts 4 hours. Would you like me to help you book tickets?";
-  } else if (lowercaseMsg.includes("food") || lowercaseMsg.includes("eat") || lowercaseMsg.includes("schnitzel") || lowercaseMsg.includes("coffee") || lowercaseMsg.includes("wine")) {
-    reply = "Viennese food is pure art! I highly recommend our **Viennese Culinary Secrets Food Tour** (€75) which visits the Naschmarkt for cheese/ham tastings and finishes at a classic coffee house for Melange and Sacher Torte. If you love wine, our full-day **Wachau Valley Wine Escape** (€110) features premium tastings at an authentic Austrian wine tavern (Heuriger).";
-  } else if (lowercaseMsg.includes("concert") || lowercaseMsg.includes("music") || lowercaseMsg.includes("mozart") || lowercaseMsg.includes("strauss")) {
-    reply = "Vienna is the capital of classical music! Our **Mozart & Strauss Vienna Concert Evening** (€49) takes place in the golden Neo-Renaissance halls of the historic Kursalon Vienna. It includes Category B seating, beautiful waltzes, polkas, opera singers, and a complimentary glass of sparkling Sekt wine. Truly a magical romantic evening!";
-  } else if (lowercaseMsg.includes("discount") || lowercaseMsg.includes("coupon") || lowercaseMsg.includes("promo")) {
-    reply = "How wonderful! We have two special promotions active: use coupon code **VIENNA15** during payment for a **15% discount**, or **WELCOMETOWIEN** for a **10% discount** on any imperial tour booking on our site!";
-  } else if (lowercaseMsg.includes("contact") || lowercaseMsg.includes("address") || lowercaseMsg.includes("phone") || lowercaseMsg.includes("email") || lowercaseMsg.includes("location")) {
-    reply = "Our head office is located at **Schlettergasse 3/9/10, 1220 Wien, Austria**. You can phone our friendly desk at **+43 664 4126911** or email us at **office@toursinvienna.at**. We are open Mon-Fri 8am-6pm and Saturday 9am-4pm. You can also send us an inquiry directly through our Contact form!";
-  } else {
-    reply = "That is a wonderful question about Vienna! As your virtual concierge, I highly recommend exploring our tailored tours: we have walking tours (€35), Schönbrunn palace skip-the-line tours (€65), river sunset cruises with a Viennese buffet (€55), food coffee house walks (€75), and romantic classical waltz concerts (€49). You can book online instantly with secure payments and 100% money-back guarantee. Is there a particular experience you'd like to reserve?";
-  }
-
-  setTimeout(() => {
-    res.json({ text: reply });
-  }, 400);
-});
-
 // 8. Analytics Data
 app.get("/api/analytics", (req, res) => {
   const totalBookings = dbState.bookings.length;

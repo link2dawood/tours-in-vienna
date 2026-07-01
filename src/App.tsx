@@ -12,7 +12,6 @@ import ReviewsList from "./components/ReviewsList";
 import BlogGrid from "./components/BlogGrid";
 import PhotoGallery from "./components/PhotoGallery";
 import ContactForm from "./components/ContactForm";
-import ChatWidget from "./components/ChatWidget";
 import AdminConsole from "./components/AdminConsole";
 import AuthModal from "./components/AuthModal";
 import BookingModal from "./components/BookingModal";
