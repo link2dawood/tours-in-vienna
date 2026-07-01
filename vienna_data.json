@@ -1,0 +1,270 @@
+{
+  "tours": [
+    {
+      "id": "vienna-classic",
+      "title": "Vienna Grand Imperial Walking Tour",
+      "tagline": "Step into the imperial history of the Habsburg dynasty",
+      "description": "Discover the captivating heart of Vienna with our local expert historians. Wander through narrow medieval alleys, stand in awe before the majestic Hofburg Palace, and hear the scandalous secrets of the Habsburg emperors.",
+      "longDescription": "Our signature walking tour is the perfect introduction to Vienna's imperial center. Led by state-licensed local historians, we cover over 800 years of dense history in an engaging, narrative style. We'll start at Stephansplatz under the towering gothic spire of St. Stephen's Cathedral. From there, we navigate the historic Graben and Kohlmarkt avenues to appreciate Viennese baroque architecture. We'll explore the expansive Hofburg Imperial Palace complex—the primary residence of the Habsburgs—including the outer courtyards and the Spanish Riding School. The tour concludes at Albertina Square, providing a profound overview of Vienna's artistic and political legacy. Perfect for first-time global travelers!",
+      "price": 35,
+      "duration": "3 Hours",
+      "category": "History & Culture",
+      "groupSize": "Max 15 people",
+      "rating": 4.9,
+      "reviewsCount": 42,
+      "startPoint": "St. Stephen's Cathedral Main Entrance (Stephansplatz 1, 1010 Wien)",
+      "highlights": [
+        "Gothic St. Stephen's Cathedral",
+        "Hofburg Imperial Palace Complex",
+        "Spanish Riding School Courtyards",
+        "Graben & Kohlmarkt historic lanes",
+        "Imperial Crypt of the Capuchins",
+        "Albertina & Opera District"
+      ],
+      "coordinates": {
+        "x": 420,
+        "y": 280,
+        "label": "Historic Center (Stephansplatz)"
+      },
+      "image": "https://images.unsplash.com/photo-1516550893923-42d28e5677af?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": "schonbrunn-palace",
+      "title": "Schönbrunn Palace & Gardens Explorer",
+      "tagline": "Skip-the-line access to Maria Theresa's glorious summer residence",
+      "description": "Walk in the footsteps of Emperor Franz Joseph and Empress Sisi. Avoid the massive crowds with our exclusive skip-the-line ticket and explore the gold-gilded baroque apartments and breathtaking hillside gardens.",
+      "longDescription": "Schönbrunn Palace is Austria's most visited landmark and a UNESCO World Heritage site. This tour grants you instant skip-the-line access, saving you hours of waiting. Our specialized guide will escort you through the Grand Tour of the palace, visiting 40 imperial apartments including Maria Theresa's luxurious quarters, the Hall of Mirrors (where a 6-year-old Mozart performed), and Emperor Franz Joseph's humble writing chamber. Following the palace interior, we step out into the sprawling Baroque gardens. We will climb to the majestic Gloriette monument on the hill for a sweeping panoramic photo of Vienna. Learn the triumphs, tragedies, and day-to-day realities of one of Europe's most influential royal families.",
+      "price": 65,
+      "duration": "4 Hours",
+      "category": "History & Culture",
+      "groupSize": "Max 10 people",
+      "rating": 4.8,
+      "reviewsCount": 38,
+      "startPoint": "Main Gate of Schönbrunn Palace (Schönbrunner Schloßstraße 47, 1130 Wien)",
+      "highlights": [
+        "Guaranteed Skip-the-line entrance ticket",
+        "Full Grand Tour of 40 Palace Rooms",
+        "Gloriette Hill panoramic viewpoint",
+        "Sisi's private garden walks",
+        "Baroque Great Parterre",
+        "Stories of Sisi & Franz Joseph"
+      ],
+      "coordinates": {
+        "x": 180,
+        "y": 450,
+        "label": "Schönbrunn Palace"
+      },
+      "image": "https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": "vienna-woods",
+      "title": "Vienna Woods & Wachau Valley Wine Escape",
+      "tagline": "Day trip to Austria's most scenic castle and wine region",
+      "description": "Escape the city bustle for the rolling vineyards of the Wachau Valley. Enjoy premium tastings of Grüner Veltliner wines, visit the breathtaking Melk Abbey, and cruise along the historic Danube river.",
+      "longDescription": "Immerse yourself in the breathtaking landscapes surrounding Vienna. We journey through the historic Vienna Woods, stopping first at the majestic, fortress-like Melk Benedictine Abbey overlooking the Danube. Afterward, we embark on a premium sightseeing cruise down the winding Danube River (Wachau Valley), passing by medieval castles and dense pine forests. We then head into a scenic wine-growing village for an exclusive tasting of Austrian white wines (including famous local Grüner Veltliner and Riesling) at a traditional, family-owned Austrian tavern (Heuriger). Includes high-end air-conditioned private coach transport, a local wine expert, all tasting flights, and a rustic Austrian lunch platter.",
+      "price": 110,
+      "duration": "Full Day (8 Hours)",
+      "category": "Food & Wine",
+      "groupSize": "Max 8 people",
+      "rating": 4.9,
+      "reviewsCount": 29,
+      "startPoint": "Vienna State Opera Main Fountain (Opernring 2, 1010 Wien)",
+      "highlights": [
+        "Premium round-trip coach transportation",
+        "Scenic Wachau Valley Danube Cruise",
+        "Melk Abbey entrance and guided tour",
+        "Guided 4-glass organic wine tasting",
+        "Traditional Austrian tavern lunch",
+        "Breathtaking medieval ruins of Dürnstein"
+      ],
+      "coordinates": {
+        "x": 100,
+        "y": 150,
+        "label": "Wachau Valley & Woods"
+      },
+      "image": "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": "mozart-concert",
+      "title": "Mozart & Strauss Vienna Concert Evening",
+      "tagline": "An evening of classical Viennese waltz in a historic golden hall",
+      "description": "Experience the music where the Viennese waltz was born. Enjoy a magical evening listening to timeless masterworks of Wolfgang Amadeus Mozart and Johann Strauss performed by world-class instrumentalists.",
+      "longDescription": "Vienna is the undisputed world capital of classical music. Spend a gorgeous evening at the historic Kursalon Vienna, a majestic neo-renaissance concert hall where Johann Strauss himself used to direct his orchestra. You'll enjoy premium seating in a grand salon with immaculate acoustics. The Salonorchester Alt Wien will perform the most beloved melodies of Mozart and Strauss, accompanied by international opera singers and graceful ballet soloists. Sip on a glass of fine sparkling Austrian Grüner Veltliner wine during intermission and let yourself be swept away by the timeless romanticism of Vienna's musical golden age.",
+      "price": 49,
+      "duration": "2 Hours",
+      "category": "Music & Arts",
+      "groupSize": "Seated Concert Hall",
+      "rating": 4.7,
+      "reviewsCount": 51,
+      "startPoint": "Kursalon Vienna Main Foyer (Johannesgasse 33, 1010 Wien)",
+      "highlights": [
+        "Premium Concert Entrance Ticket (Category B)",
+        "Viennese waltzes, polkas, and operatic duets",
+        "Symphonies of Mozart & Strauss",
+        "Complimentary glass of sparkling Austrian Sekt",
+        "Historic Neo-Renaissance Concert Hall"
+      ],
+      "coordinates": {
+        "x": 490,
+        "y": 340,
+        "label": "Kursalon Concert Hall"
+      },
+      "image": "https://images.unsplash.com/photo-1511192336575-5a79af67a629?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": "danube-cruise",
+      "title": "Danube River Evening Sunset Cruise",
+      "tagline": "Vienna's modern and historic skyline from the water with buffet",
+      "description": "Sip on a refreshing beverage and watch the lights of Vienna ignite. Cruise down the Danube Canal while indulging in fresh Wiener Schnitzel and traditional local delicacies.",
+      "longDescription": "As twilight blankets the city, hop aboard our premium, double-decker cruise vessel at Schwedenplatz. We will navigate the historic Danube Canal and transition into the main Danube River, showcasing the captivating contrast between Vienna's old imperial architecture and the glittering, modern skyscrapers of the UN Quarter. While cruising, satisfy your appetite with our hot Viennese Grand Buffet, featuring freshly prepared Wiener Schnitzel, pork roast with potato dumplings, apple strudel, and various seasonal salads. A live traditional accordionist will provide a nostalgic ambient soundtrack to your romantic cruise.",
+      "price": 55,
+      "duration": "3 Hours",
+      "category": "Nature & Sightseeing",
+      "groupSize": "Max 60 people",
+      "rating": 4.6,
+      "reviewsCount": 33,
+      "startPoint": "Schwedenplatz Boat Terminal, Pier 3 (Franz-Josefs-Kai 2, 1010 Wien)",
+      "highlights": [
+        "3-hour atmospheric twilight boat cruise",
+        "All-inclusive hot Viennese Grand Buffet",
+        "Stunning sunset views of modern UN Quarter",
+        "Accordion folk music live onboard",
+        "Welcome Austrian drink included"
+      ],
+      "coordinates": {
+        "x": 550,
+        "y": 200,
+        "label": "Schwedenplatz Canal Dock"
+      },
+      "image": "https://images.unsplash.com/photo-1543783207-ec64e4d95325?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": "vienna-food",
+      "title": "Viennese Culinary Secrets Food Tour",
+      "tagline": "Taste your way through the Naschmarkt and legendary coffee houses",
+      "description": "Skip the tourist traps and discover the real culinary soul of Vienna. Taste rich alpine cheeses, savory local sausages, and learn the sacred etiquette of the Viennese coffee house.",
+      "longDescription": "Viennese cuisine is unique: it is the only national cuisine in the world named after a city! Join our hungry culinary guide on a tasting safari. We begin at the colorful Naschmarkt, Vienna's open-air sensory market. Here we will sample local mountain cheeses, dry-aged hams, and organic Austrian pickles. Next, we visit a secret, historic 'Würstelstand' (sausage stand) for premium cheese-stuffed Käsekrainer sausages. We'll conclude the tour at a traditional, high-ceilinged Viennese coffee house to learn the historical significance of the cafe culture, tasting a slice of legendary Sacher Torte paired with a perfectly brewed 'Melange' coffee. Bring a major appetite!",
+      "price": 75,
+      "duration": "3.5 Hours",
+      "category": "Food & Wine",
+      "groupSize": "Max 12 people",
+      "rating": 4.9,
+      "reviewsCount": 47,
+      "startPoint": "Naschmarkt Main Entrance, near Karlsplatz Metro Exit (Karlsplatz, 1010 Wien)",
+      "highlights": [
+        "Passionate culinary expert guide",
+        "10+ food & beverage tastings",
+        "Curated alpine cheese & Austrian dry-cured ham flight",
+        "Hot Käsekrainer sausage and local mustard tasting",
+        "Sachertorte & traditional Melange coffee at a historical cafe",
+        "Austrian chocolate workshop visit"
+      ],
+      "coordinates": {
+        "x": 380,
+        "y": 390,
+        "label": "Naschmarkt Food Haven"
+      },
+      "image": "https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=800&q=80"
+    }
+  ],
+  "reviews": [
+    {
+      "id": "rev-1",
+      "tourId": "vienna-classic",
+      "tourTitle": "Vienna Grand Imperial Walking Tour",
+      "userName": "Charlotte Dupont",
+      "rating": 5,
+      "comment": "This walking tour was the absolute highlight of our trip. Andreas, our guide, was so engaging and passionate. He brought the Hofburg stories to life with incredible humor and depth. Highly recommend doing this on your first day!",
+      "createdAt": "2026-06-25T14:22:00Z",
+      "userAvatar": "CD"
+    },
+    {
+      "id": "rev-2",
+      "tourId": "vienna-classic",
+      "tourTitle": "Vienna Grand Imperial Walking Tour",
+      "userName": "Markus Schmidt",
+      "rating": 5,
+      "comment": "I have lived in Germany for years and visited Vienna multiple times, but this tour taught me so much I never knew! Andreas is a master storyteller. Beautifully structured walking pace.",
+      "createdAt": "2026-06-28T10:15:00Z",
+      "userAvatar": "MS"
+    },
+    {
+      "id": "rev-3",
+      "tourId": "vienna-food",
+      "tourTitle": "Viennese Culinary Secrets Food Tour",
+      "userName": "James Miller",
+      "rating": 5,
+      "comment": "Excellent food tour. The Naschmarkt was overwhelming on our own, but with our guide Elena, we tasted the best local treats and met local stall owners. The Käsekrainer was mind-blowing, and finishing with coffee and Sacher Torte felt like pure heaven. Worth every cent!",
+      "createdAt": "2026-06-29T16:40:00Z",
+      "userAvatar": "JM"
+    },
+    {
+      "id": "rev-4",
+      "tourId": "schonbrunn-palace",
+      "tourTitle": "Schönbrunn Palace & Gardens Explorer",
+      "userName": "Sarah Jenkins",
+      "rating": 4,
+      "comment": "Skip the line is an understatement! The regular ticket queues were hours long, but we walked right in. The rooms are gorgeous, and the climb to the Gloriette gardens was wonderful, though it can be a bit steep if you are walking with elders. Fantastic guide.",
+      "createdAt": "2026-06-24T11:05:00Z",
+      "userAvatar": "SJ"
+    },
+    {
+      "id": "rev-5",
+      "tourId": "mozart-concert",
+      "tourTitle": "Mozart & Strauss Vienna Concert Evening",
+      "userName": "Alessandro Rossi",
+      "rating": 5,
+      "comment": "Magical evening. The acoustics of the Kursalon are incredibly crisp, and the musicians performed with so much energy. The classical dancers added such visual romance. The free glass of Sekt was a lovely touch!",
+      "createdAt": "2026-06-27T21:30:00Z",
+      "userAvatar": "AR"
+    }
+  ],
+  "blogs": [
+    {
+      "id": "blog-1",
+      "title": "The Ultimate Guide to Vienna Coffee House Culture",
+      "excerpt": "Learn the rich history, local etiquette, and essential coffee drinks to order like a true Viennese local.",
+      "content": "Vienna's coffee house culture is so legendary that UNESCO has officially designated it as an 'Intangible Cultural Heritage'. But stepping into a historic Viennese cafe like Cafe Central, Cafe Sacher, or Cafe Landtmann can be intimidating for newcomers. First, understand the philosophy: a coffee house is a place 'where time and space are consumed, but only the coffee is found on the bill'. You are encouraged to buy a single coffee, read the newspapers for hours, and never be rushed by the waiters.\n\n### Essential Vienna Coffee Drinks:\n1. **Melange**: The undisputed king. Similar to a cappuccino, it consists of one espresso shot, steamed milk, and a crown of milk foam or whipped cream.\n2. **Einspänner**: A double espresso served in a glass, topped with a generous mountain of cold whipped cream, traditionally dusted with cocoa.\n3. **Kleiner/Großer Brauner**: A single or double espresso shot served with a miniature jug of fresh cream on the side so you can customize the color.\n4. **Verlängerter**: An espresso diluted with hot water to create a milder, longer drink.\n\n### Coffee House Etiquette:\n- **Don't rush**: When you finish your coffee, you can stay. The waiter (traditionally called 'Herr Ober') will serve you a glass of cold tap water with a spoon balanced across the rim. This water is meant to cleanse your palate between sips.\n- **Cash is King**: While many modern establishments accept credit cards, historic cafes still highly prefer cash. Always keep some coins for tipping!",
+      "date": "2026-06-15",
+      "author": "Elena Petrova",
+      "image": "https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=80",
+      "readTime": "5 min read",
+      "category": "Food & Culture",
+      "comments": [
+        {
+          "id": "c-1",
+          "userName": "Emily Watson",
+          "comment": "This was incredibly helpful! I was so afraid of ordering wrong, but I tried the Melange at Cafe Central today and it was wonderful.",
+          "createdAt": "2026-06-18T09:15:00Z"
+        }
+      ]
+    },
+    {
+      "id": "blog-2",
+      "title": "How to See Vienna in 3 Days: A Perfect Itinerary",
+      "excerpt": "Maximize your trip with our step-by-step 72-hour itinerary covering imperial palaces, museums, and local taverns.",
+      "content": "Three days is the perfect duration to fall in love with Vienna. This step-by-step itinerary blends majestic Habsburg history, legendary art collections, and cozy local culinary hideouts.\n\n### Day 1: Imperial Core & Classical Splendor\n- **Morning**: Start at **Stephansplatz** and climb the South Tower of St. Stephen's Cathedral for spectacular views. Walk down the luxury Kohlmarkt and Graben streets.\n- **Lunch**: Enjoy a traditional Austrian Tafelspitz at Plachutta or grab a quick 'Trzesniewski' open-faced sandwich.\n- **Afternoon**: Explore the **Hofburg Imperial Palace**, including the Sisi Museum and Imperial Apartments. Catch the Lipizzaner stallions resting in their stables.\n- **Evening**: Dress up for a romantic Mozart and Strauss Classical Concert or catch an opera at the Vienna State Opera.\n\n### Day 2: Baroque Sensation & Sisi's Summer Home\n- **Morning**: Take the U4 subway line straight to **Schönbrunn Palace**. Dedicate 3-4 hours to touring the palace rooms and walking up to the Gloriette view.\n- **Lunch**: Try an imperial Strudel Show in the Schönbrunn bakery.\n- **Afternoon**: Visit the **Belvedere Palace** to stand face-to-face with Gustav Klimt's famous masterpiece, *The Kiss*.\n- **Evening**: Ride the historic Giant Ferris Wheel at the **Prater Amusement Park** for sunset views.\n\n### Day 3: Masterpieces, Markets & Wine\n- **Morning**: Walk through the vibrant stalls of the **Naschmarkt**, tasting local cheeses and dried fruits.\n- **Afternoon**: Discover modern art and architecture at the **Hundertwasserhaus** or tour the Museumsquartier (MQ).\n- **Evening**: Head out to the wine-growing suburb of **Grinzing** for a traditional dinner at a rustic 'Heuriger' tavern, sipping young white wine.",
+      "date": "2026-06-20",
+      "author": "Andreas Wagner",
+      "image": "https://images.unsplash.com/photo-1516550893923-42d28e5677af?auto=format&fit=crop&w=800&q=80",
+      "readTime": "8 min read",
+      "category": "Itineraries",
+      "comments": []
+    },
+    {
+      "id": "blog-3",
+      "title": "Secret Spots in Vienna Tourists Always Miss",
+      "excerpt": "Ditch the crowds and explore these hidden gothic courtyards, subterranean Roman ruins, and cozy neighborhood cafes.",
+      "content": "While Schönbrunn and the Opera House are stunning, Vienna's true magic often hides in plain sight. Here are four secret spots where you can escape the tourist herds and experience the authentic Viennese charm.\n\n### 1. The Gothic Courtyards of Blutgasse\nJust a two-minute walk behind St. Stephen's Cathedral lies the historic 'Blutgasse' (Blood Lane) district. Enter the heavy wooden doors of the inner courtyards. You will find beautiful cobblestones, cascading ivy, and 17th-century wooden galleries ('Pawlatschen') that make you feel like you stepped back into Mozart's era.\n\n### 2. The Roman Ruins at Michaelerplatz\nRight in front of the Hofburg Palace main dome, look down into the open-air excavation pit. Here lie the ancient stone foundations of a Roman legionary garrison (Vindobona) dating back nearly 2,000 years, alongside medieval foundations.\n\n### 3. Vienna's Municipal Vineyards on Nussberg\nMost tourists visit wine taverns in Grinzing, but the true locals hike up the **Nussberg Hill** during sunny weekends. Sit directly amidst the grapevines at a 'Buschenschank' (pop-up outdoor wine table), ordering a glass of cold Wiener Gemischter Satz and enjoying breathtaking views over the Danube River.\n\n### 4. The Setagaya Japanese Garden\nLocated in Döbling, this hidden 4,000-square-meter garden is an absolute oasis of tranquility, designed by Japanese landscaper Ken Nakajima. It features tranquil waterfalls, a tea house, stone lanterns, and dense groves of cherry blossoms.",
+      "date": "2026-06-24",
+      "author": "Elena Petrova",
+      "image": "https://images.unsplash.com/photo-1543783207-ec64e4d95325?auto=format&fit=crop&w=800&q=80",
+      "readTime": "6 min read",
+      "category": "Hidden Gems",
+      "comments": []
+    }
+  ],
+  "bookings": [],
+  "inquiries": [],
+  "emails": []
+}
