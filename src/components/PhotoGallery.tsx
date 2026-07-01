@@ -25,13 +25,13 @@ export default function PhotoGallery() {
       desc: "Gothic display architecture showcasing the multi-colored tile roofs of the symbol of Vienna."
     },
     {
-      url: "https://images.unsplash.com/photo-1563297051-4e4bf9ec06db?auto=format&fit=crop&w=1200&q=80",
+      url: "/vienna-opera-hall.png",
       title: "Vienna State Opera Hall",
       tag: "culture",
       desc: "One of the most acclaimed opera venues globally, host of the historic annual Vienna Opera Ball."
     },
     {
-      url: "https://images.unsplash.com/photo-1513829096999-497860229787?auto=format&fit=crop&w=1200&q=80",
+      url: "/vienna-coffee-culture.png",
       title: "Classic Vienna Coffee Protocol",
       tag: "culture",
       desc: "Indulging in a traditional Wiener Melange espresso accompanied by a slice of decadent Sachertorte chocolate cake."
