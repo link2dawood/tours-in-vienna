@@ -1,6 +1,5 @@
 {
   "buildCommand": "pnpm run build",
-  "startCommand": "node dist/server.cjs",
-  "env": {},
-  "regions": ["iad1"]
+  "outputDirectory": "",
+  "installCommand": "pnpm install"
 }
