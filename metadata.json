@@ -1,0 +1,6 @@
+{
+  "name": "Tours in Vienna Travel Agency",
+  "description": "Premium booking website for Tours in Vienna featuring a booking engine, interactive map, live chat support, reviews, analytics, and contact forms.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
