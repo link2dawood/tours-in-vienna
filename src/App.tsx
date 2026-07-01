@@ -510,9 +510,6 @@ export default function App() {
         </div>
       </footer>
 
-      {/* Franz floating AI Concierge Chatbot Widget */}
-      <ChatWidget />
-
       {/* MODAL CHECKOUT FLOW PANELS */}
       <BookingModal
         tour={activeBookingTour}
